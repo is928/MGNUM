@@ -5,12 +5,9 @@ def mg(*ns):
     while len(ns) > 1:
         x ,y ,l = ns[0] ,ns[1] ,[]
         while x != y:
-            if x > y:
-                l += [x]
-                x-=1
-            else:
-                l += [x]
-                x+=1
+            l += [x]
+            if x > y:x-=1
+            else:x+=1
         l ,ns = l+[x] ,ns[1:]
         r +=[l]
     return r
